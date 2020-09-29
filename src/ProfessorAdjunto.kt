@@ -1,0 +1,1 @@
+class ProfessorAdjunto(val quantidadeDeHoras: Int) {}
