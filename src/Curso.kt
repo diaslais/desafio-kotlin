@@ -1,19 +1,34 @@
 class Curso (
         val nome: String,
         val codigoCurso: Int,
-        val professorTitular: ProfessorTitular,
-        val professorAdjunto: ProfessorAdjunto,
-        val quantidadeMaximaDeAlunos: Int,
-        var alunosMatriculados: MutableList<Aluno>
+        //val professorTitular: ProfessorTitular,
+        //val professorAdjunto: ProfessorAdjunto,
+        var quantidadeMaximaDeAlunos: Int
+        //var alunosMatriculados: MutableList<Aluno>
 ) {
-    //métodos
+    var professorTitular: ProfessorTitular = ProfessorTitular("", "", 0, 0, "")
+    var professorAdjunto: ProfessorAdjunto = ProfessorAdjunto("", "", 0, 0, 0)
+    var alunosMatriculados: MutableList<Aluno> = mutableListOf<Aluno>()
+
+    constructor(
+            nome: String,
+            codigoCurso: Int,
+            quantidadeMaximaDeAlunos: Int,
+            professorTitular: ProfessorTitular,
+            professorAdjunto: ProfessorAdjunto,
+            alunosMatriculados: MutableList<Aluno>
+    ): this(nome, codigoCurso, quantidadeMaximaDeAlunos){
+        this.professorTitular = professorTitular
+        this.professorAdjunto = professorAdjunto
+        this.alunosMatriculados = alunosMatriculados
+    }
+
     fun adicionarUmAluno(umAluno: Aluno): Boolean{
-        if(this.alunosMatriculados.size < quantidadeMaximaDeAlunos){
+        if(this.alunosMatriculados.size < this.quantidadeMaximaDeAlunos){
             this.alunosMatriculados.add(umAluno)
             return true
-        } else{
-            return false
         }
+        return false
     }
 
     fun excluirAluno(umAluno: Aluno){
