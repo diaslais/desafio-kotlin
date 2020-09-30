@@ -1,10 +1,7 @@
 class Curso (
         val nome: String,
         val codigoCurso: Int,
-        //val professorTitular: ProfessorTitular,
-        //val professorAdjunto: ProfessorAdjunto,
         var quantidadeMaximaDeAlunos: Int
-        //var alunosMatriculados: MutableList<Aluno>
 ) {
     var professorTitular: ProfessorTitular = ProfessorTitular("", "", 0, 0, "")
     var professorAdjunto: ProfessorAdjunto = ProfessorAdjunto("", "", 0, 0, 0)
