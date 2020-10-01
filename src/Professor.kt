@@ -3,4 +3,4 @@ abstract class Professor(
         val sobrenome: String,
         var tempoDeCasa: Int,
         val codigoProfessor: Int
-) {}
+)
