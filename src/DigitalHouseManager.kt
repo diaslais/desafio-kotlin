@@ -11,10 +11,14 @@ class DigitalHouseManager(
     }
 
     fun excluirCurso(codigoCurso: Int){
+        var cursoAExcluir: Curso? = null
         for(curso in this.cursos){
             if(curso.codigoCurso == codigoCurso){
-                this.cursos.remove(curso)
+                cursoAExcluir = curso
             }
+        }
+        if (cursoAExcluir != null){
+            this.cursos.remove(cursoAExcluir)
         }
     }
 
@@ -27,10 +31,14 @@ class DigitalHouseManager(
     }
 
     fun excluirProfessor(codigoProfessor: Int){
+        var professorAExcluir: Professor? = null
         for(professor in this.professores){
             if(professor.codigoProfessor == codigoProfessor){
-                this.professores.remove(professor)
+                professorAExcluir = professor
             }
+        }
+        if (professorAExcluir != null){
+            this.professores.remove(professorAExcluir)
         }
     }
 
