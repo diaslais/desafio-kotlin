@@ -69,9 +69,10 @@ class DigitalHouseManager(
 
         if (cursoMatricula.alunosMatriculados.size < cursoMatricula.quantidadeMaximaDeAlunos){
             this.matriculas.add(Matricula(alunoMatricula, cursoMatricula, LocalDateTime.now()))
+            cursoMatricula.alunosMatriculados.add(alunoMatricula)
             println("O aluno foi matriculado com sucesso!")
         } else{
-            println("Não foi possível reaizar a matrícula pois não há vagas.")
+            println("Não foi possível realizar a matrícula pois não há vagas.")
         }
     }
 
