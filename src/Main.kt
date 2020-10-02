@@ -15,15 +15,15 @@ fun main(){
     curso1.adicionarUmAluno(aluno3)
 
     for (i in curso1.alunosMatriculados){
-        println("${i.nome}, ${i.sobrenome}, ${i.codigoAluno}")
+        println(i.toString())
     }
+    println("")
 
     //excluirAluno
     curso1.excluirAluno(curso1.alunosMatriculados[1])
-    println("")
 
     for (i in curso1.alunosMatriculados){
-        println("${i.nome}, ${i.sobrenome}, ${i.codigoAluno}")
+        println(i.toString())
     }
     println("")
 
@@ -39,9 +39,10 @@ fun main(){
     //registrarCurso
     digitalHouse.registrarCurso("Fullstack", 5678, 3)
     digitalHouse.registrarCurso("Desenvolvimento Mobile", 12345, 2)
+    digitalHouse.registrarCurso("Desenvolvimento Web", 91011, 1)
 
     for (i in listaDeCursos){
-        println("${i.nome}, ${i.codigoCurso}, ${i.quantidadeMaximaDeAlunos}")
+        println(i.toString())
     }
     println("")
 
@@ -49,11 +50,62 @@ fun main(){
     digitalHouse.excluirCurso(12345)
 
     for (i in listaDeCursos){
-        println("${i.nome}, ${i.codigoCurso}, ${i.quantidadeMaximaDeAlunos}")
+        println(i.toString())
     }
     println("")
 
+    //registrarProfessorAdjunto
+    digitalHouse.registrarProfessorAdjunto("Tibúrcio", "Souza", 666, 10)
+    digitalHouse.registrarProfessorAdjunto("Jonas", "Menezes", 777, 7)
 
+    for (i in digitalHouse.professores){
+        println(i.toString())
+    }
+    println("")
 
+    //registrarProfessorTitular
+    digitalHouse.registrarProfessorTitular("Marcio", "Gonzales", 789, "Front-end")
+    digitalHouse.registrarProfessorTitular("Zé", "Juares", 456, "Back-end")
 
+    for (i in digitalHouse.professores){
+        println(i.toString())
+    }
+    println("")
+
+    //excluirProfessor
+    digitalHouse.excluirProfessor(666)
+    digitalHouse.excluirProfessor(789)
+
+    for (i in digitalHouse.professores){
+        println(i.toString())
+    }
+    println("")
+
+    //matricularAluno
+    digitalHouse.matricularAluno("Huguinho", "Duck", 100)
+    digitalHouse.matricularAluno("Zezinho", "Duck", 200)
+    digitalHouse.matricularAluno("Luizinho", "Duck", 300)
+
+    for (i in digitalHouse.alunos){
+        println(i.toString())
+    }
+    println("")
+
+    //matricularAluno
+    digitalHouse.matricularAluno(100, 91011)
+    digitalHouse.matricularAluno(200, 91011)
+    digitalHouse.matricularAluno(300, 91011)
+
+    for (i in digitalHouse.matriculas){
+        println(i.toString())
+    }
+    println("")
+
+    //alocarProfessores
+    digitalHouse.alocarProfessores(5678, 456, 777)
+
+    for (i in listaDeCursos){
+        println(i.toString())
+    }
+    println("")
 }
